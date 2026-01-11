@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Evento — Cobertura nocturna",
+    "category": "eventos",
+    "url": "assets/img/gallery/foto-01.jpg",
+    "thumb": "assets/img/gallery/foto-01.jpg"
+  },
+  {
+    "title": "Retrato — Luz natural",
+    "category": "retratos",
+    "url": "assets/img/gallery/foto-02.jpg",
+    "thumb": "assets/img/gallery/foto-02.jpg"
+  },
+  {
+    "title": "Arte — Composición editorial",
+    "category": "arte",
+    "url": "assets/img/gallery/foto-03.jpg",
+    "thumb": "assets/img/gallery/foto-03.jpg"
+  }
+]

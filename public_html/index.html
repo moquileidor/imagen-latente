@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>imagenlatente.com.ar — Fotografía Digital</title>
+  <meta name="description" content="Imagen Latente — Fotografía Digital. Cobertura de eventos, retratos y fotografía artística." />
+
+  <!-- Tailwind CSS via CDN (OK para Fase 1) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer base {
+      body { @apply bg-zinc-950 text-zinc-200 font-sans; }
+      ::selection { @apply bg-cyan-500/30; }
+    }
+    .glass { @apply bg-zinc-950/60 backdrop-blur border border-white/10; }
+    .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition; }
+    .btn-primary { @apply bg-cyan-500 text-zinc-950 hover:bg-cyan-400; }
+    .btn-ghost { @apply bg-white/5 hover:bg-white/10 border border-white/10; }
+    .badge { @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-300; }
+    .section { @apply py-16 md:py-24; }
+    .title { @apply text-3xl md:text-4xl font-extrabold tracking-tight text-white; }
+    .subtitle { @apply mt-3 text-zinc-400 max-w-2xl; }
+    .card { @apply rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/30; }
+    .fade-in { animation: fadeIn .25s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="glass sticky top-0 z-40">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#inicio" class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl bg-white/5 border border-white/10 grid place-items-center font-black text-white">IL</div>
+        <div class="leading-tight">
+          <div class="text-white font-extrabold tracking-wide">IMAGEN LATENTE</div>
+          <div class="text-xs text-zinc-400 -mt-0.5">Fotografía Digital</div>
+        </div>
+      </a>
+
+      <button id="menuBtn" class="md:hidden btn btn-ghost" aria-label="Abrir menú">☰</button>
+
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a class="hover:text-cyan-300 transition" href="#galeria">Galería</a>
+        <a class="hover:text-cyan-300 transition" href="#servicios">Servicios</a>
+        <a class="hover:text-cyan-300 transition" href="#sobre">Sobre</a>
+        <a class="hover:text-cyan-300 transition" href="#contacto">Contacto</a>
+        <a class="btn btn-primary" href="#contacto">Cotizar</a>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-4 flex flex-col gap-3 text-sm">
+        <a class="hover:text-cyan-300" href="#galeria">Galería</a>
+        <a class="hover:text-cyan-300" href="#servicios">Servicios</a>
+        <a class="hover:text-cyan-300" href="#sobre">Sobre</a>
+        <a class="hover:text-cyan-300" href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="inicio" class="relative min-h-[92vh] flex items-center">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <!-- Puedes reemplazar por tu propia imagen: assets/img/hero/hero.jpg -->
+      <img
+        src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=2400&auto=format&fit=crop"
+        alt="Fotografía de portada"
+        class="h-full w-full object-cover opacity-40"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/20"></div>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-6xl px-4">
+      <div class="max-w-3xl">
+        <div class="flex flex-wrap gap-2">
+          <span class="badge">Eventos</span>
+          <span class="badge">Retratos</span>
+          <span class="badge">Arte & Lifestyle</span>
+        </div>
+
+        <h1 class="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+          Capturamos momentos que no se repiten.
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-zinc-300 max-w-2xl">
+          <span class="font-semibold text-white">imagenlatente.com.ar</span> — Fotografía Digital.
+          Coberturas, retratos y contenido visual con estética cuidada y entrega profesional.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn btn-primary" href="#galeria">Ver galería</a>
+          <a class="btn btn-ghost" href="#contacto">Contactar</a>
+        </div>
+
+        <div class="mt-10 text-sm text-zinc-400">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span>📞 +54 351 6197159</span>
+            <span>📸 @ArielPhotoart · @arielcarreras</span>
+            <!-- <a class="hover:text-cyan-300 transition" href="http://www.carrerasariel.com.ar" target="_blank" rel="noreferrer">
+              carrerasariel.com.ar ↗
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="title">Galería</h2>
+      <p class="subtitle">
+        Selección de trabajos. Puedes filtrar por categoría y abrir cada foto en pantalla completa.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-2">
+        <button class="btn btn-ghost text-sm" data-filter="all">Todas</button>
+        <button class="btn btn-ghost text-sm" data-filter="eventos">Eventos</button>
+        <button class="btn btn-ghost text-sm" data-filter="retratos">Retratos</button>
+        <button class="btn btn-ghost text-sm" data-filter="arte">Arte</button>
+      </div>
+
+      <div id="galleryStatus" class="mt-6 text-sm text-zinc-400"></div>
+
+      <div id="galleryGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- JS inject -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="title">Servicios</h2>
+      <p class="subtitle">Paquetes flexibles según tu necesidad. Sin letra chiquita, solo buena luz.</p>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <div class="card p-6">
+          <h3 class="text-white font-bold text-xl">Eventos</h3>
+          <p class="mt-3 text-zinc-400">Cobertura completa, selección curada y entrega ordenada.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-white font-bold text-xl">Retratos</h3>
+          <p class="mt-3 text-zinc-400">Sesiones con dirección, estética y edición consistente.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-white font-bold text-xl">Contenido</h3>
+          <p class="mt-3 text-zinc-400">Material para redes, marcas y proyectos creativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-2 md:items-center">
+      <div>
+        <h2 class="title">Sobre Imagen Latente</h2>
+        <p class="subtitle">
+          Agencia enfocada en fotografía digital con estética moderna. Dirección, edición y entrega lista para publicar.
+        </p>
+
+        <div class="mt-6 space-y-3 text-zinc-300">
+          <p><span class="text-white font-semibold">Ariel Alejandro Carreras</span> — Fotografía Digital.</p>
+          <p>Trabajo con enfoque en composición, narrativa visual y consistencia estética.</p>
+          <p class="text-zinc-400 text-sm">¿Quieres algo más “editorial” o más “documental”? Se define desde el briefing.</p>
+        </div>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a class="btn btn-primary" href="#contacto">Pedir cotización</a>
+          <a class="btn btn-ghost" href="#galeria">Ver trabajos</a>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="text-white font-bold text-xl">Contacto rápido</h3>
+        <div class="mt-4 space-y-2 text-zinc-300">
+          <div>📞 <span class="text-white font-semibold">+54 351 6197159</span></div>
+          <div>🌐 <a class="hover:text-cyan-300 transition" href="http://www.carrerasariel.com.ar" target="_blank" rel="noreferrer">carrerasariel.com.ar</a></div>
+          <div>📷 <span class="text-white font-semibold">@ArielPhotoart</span></div>
+          <div>📷 <span class="text-white font-semibold">@arielcarreras</span></div>
+        </div>
+
+        <!-- <div class="mt-6 text-sm text-zinc-400">
+          Si quieres que el cliente descargue fotos con acceso privado, eso va en la Fase 2 (backend).
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="title">Contacto</h2>
+      <p class="subtitle">Escríbenos y te respondemos con tiempos, disponibilidad y presupuesto.</p>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <div class="card p-6">
+          <h3 class="text-white font-bold text-xl">Datos</h3>
+          <div class="mt-4 space-y-2 text-zinc-300">
+            <div>📞 +54 351 6197159</div>
+            <div>🌐 <a class="hover:text-cyan-300 transition" href="http://www.carrerasariel.com.ar" target="_blank" rel="noreferrer">www.carrerasariel.com.ar</a></div>
+            <div>📷 Instagram: @ArielPhotoart · @arielcarreras</div>
+            <!-- <div>🏷️ Agencia: imagenlatente.com.ar</div> -->
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="text-white font-bold text-xl">Formulario</h3>
+          <!-- <p class="mt-2 text-sm text-zinc-400">En Fase 1 lo dejamos como mailto para que funcione sin backend.</p> -->
+
+          <form class="mt-5 space-y-3" onsubmit="return window.App.handleContactSubmit(event)">
+            <input class="w-full rounded-xl bg-zinc-900/60 border border-white/10 px-4 py-3 outline-none focus:border-cyan-400"
+                   name="name" placeholder="Nombre" required />
+            <input class="w-full rounded-xl bg-zinc-900/60 border border-white/10 px-4 py-3 outline-none focus:border-cyan-400"
+                   type="email" name="email" placeholder="Email" required />
+            <textarea class="w-full min-h-[120px] rounded-xl bg-zinc-900/60 border border-white/10 px-4 py-3 outline-none focus:border-cyan-400"
+                      name="message" placeholder="Mensaje" required></textarea>
+
+            <button class="btn btn-primary w-full" type="submit">Enviar</button>
+            <!-- <p class="text-xs text-zinc-500">
+              *Esto abre tu cliente de correo. En Fase 2 lo convertimos en envío real con PHP.
+            </p> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/90 fade-in items-center justify-center">
+    <button id="lbClose" class="absolute top-4 right-6 text-white text-4xl font-black hover:text-cyan-300">&times;</button>
+    <button id="lbPrev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl p-4 bg-white/10 rounded-full hover:bg-white/20">&#10094;</button>
+    <button id="lbNext" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl p-4 bg-white/10 rounded-full hover:bg-white/20">&#10095;</button>
+    <div class="p-4 max-w-5xl max-h-full">
+      <img id="lbImg" src="" alt="Vista ampliada" class="max-h-[85vh] max-w-full object-contain rounded-xl" />
+      <p id="lbCaption" class="text-center text-zinc-300 mt-4 text-lg"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-10">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm text-zinc-400">
+      <div>© <span id="year"></span>2026 — Fotografía Digital</div>
+      <div class="flex flex-wrap gap-4">
+        <a class="hover:text-cyan-300 transition" href="#inicio">Inicio</a>
+        <a class="hover:text-cyan-300 transition" href="#galeria">Galería</a>
+        <a class="hover:text-cyan-300 transition" href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/public_html/assets/js/app.js"></script>
+  <script src="/public_html/assets/js/gallery.js"></script>
+</body>
+</html>
