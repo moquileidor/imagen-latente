@@ -1,17 +1,40 @@
 window.App = (() => {
   function initNav() {
     const menuBtn = document.getElementById("menuBtn");
+    const menuIcon = document.getElementById("menuIcon");
     const mobileMenu = document.getElementById("mobileMenu");
 
-    if (menuBtn && mobileMenu) {
+    if (menuBtn && mobileMenu && menuIcon) {
       menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        menuBtn.setAttribute("aria-expanded", !isHidden);
+        menuIcon.textContent = isHidden ? "☰" : "✕";
       });
 
       mobileMenu.querySelectorAll("a").forEach((a) => {
-        a.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+        a.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuIcon.textContent = "☰";
+        });
       });
     }
+
+    // Smooth scroll with navbar offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '#inicio') return; // Skip empty or home links
+
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const offset = 80; // navbar height
+          const targetPosition = target.offsetTop - offset;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+      });
+    });
   }
 
   function initFooterYear() {

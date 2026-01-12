@@ -1,0 +1,29 @@
+[
+  {
+    "id": "evento-001",
+    "title": "Evento — Cobertura nocturna",
+    "category": "eventos",
+    "date": "2026-01-10",
+    "url": "assets/img/gallery/full/foto-01.jpg",
+    "thumb": "assets/img/gallery/thumbs/foto-01.jpg",
+    "alt": "Cobertura fotográfica de evento nocturno con iluminación profesional"
+  },
+  {
+    "id": "retrato-001",
+    "title": "Retrato — Luz natural",
+    "category": "retratos",
+    "date": "2026-01-08",
+    "url": "assets/img/gallery/full/foto-02.jpg",
+    "thumb": "assets/img/gallery/thumbs/foto-02.jpg",
+    "alt": "Retrato con luz natural en exteriores"
+  },
+  {
+    "id": "arte-001",
+    "title": "Arte — Composición editorial",
+    "category": "arte",
+    "date": "2026-01-05",
+    "url": "assets/img/gallery/full/foto-03.jpg",
+    "thumb": "assets/img/gallery/thumbs/foto-03.jpg",
+    "alt": "Composición artística con enfoque editorial"
+  }
+]
