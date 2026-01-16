@@ -32,14 +32,20 @@
     }
   }
 
-  function applyFilter(filter) {
+  function applyFilter(filter, query = "") {
     activeFilter = filter;
-    filtered = filter === "all"
-      ? images
-      : images.filter((img) => (img.category || "").toLowerCase() === filter);
+    const q = query.toLowerCase().trim();
+
+    filtered = images.filter((img) => {
+      const matchFilter = filter === "all" || (img.category || "").toLowerCase() === filter;
+      const matchQuery = !q ||
+        (img.title || "").toLowerCase().includes(q) ||
+        (img.category || "").toLowerCase().includes(q);
+      return matchFilter && matchQuery;
+    });
 
     render();
-    setStatus(`${filtered.length} fotos`);
+    setStatus(`${filtered.length} resultados`);
   }
 
   function render() {
@@ -114,18 +120,29 @@
       .replaceAll("'", "&#039;");
   }
 
+  function initSearch() {
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        applyFilter(activeFilter, e.target.value);
+      });
+    }
+  }
+
   function initFilters() {
     document.querySelectorAll("[data-filter]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        document.querySelectorAll("[data-filter]").forEach(b => b.classList.remove("ring-2", "ring-cyan-400"));
-        btn.classList.add("ring-2", "ring-cyan-400");
-        applyFilter(btn.dataset.filter);
+        document.querySelectorAll("[data-filter]").forEach(b => {
+          b.classList.remove("bg-cyan-600", "text-black");
+          b.classList.add("bg-zinc-900", "text-zinc-400");
+        });
+        btn.classList.add("bg-cyan-600", "text-black");
+        btn.classList.remove("bg-zinc-900", "text-zinc-400");
+
+        const searchInput = document.getElementById("searchInput");
+        applyFilter(btn.dataset.filter, searchInput ? searchInput.value : "");
       });
     });
-
-    // Activa visualmente "Todas"
-    const first = document.querySelector('[data-filter="all"]');
-    if (first) first.classList.add("ring-2", "ring-cyan-400");
   }
 
   function initLightboxControls() {
@@ -151,6 +168,7 @@
     if (!grid) return;
 
     initFilters();
+    initSearch();
     initLightboxControls();
     await loadImages();
   });

@@ -48,16 +48,27 @@ window.App = (() => {
     const form = e.target;
     const name = form.name.value.trim();
     const email = form.email.value.trim();
+    const whatsapp = form.whatsapp.value.trim();
+    const type = form.type.value;
+    const priority = form.priority.value;
     const message = form.message.value.trim();
 
-    const subject = encodeURIComponent("Consulta — Imagen Latente");
+    const subject = encodeURIComponent(`[${priority.toUpperCase()}] Solicitud de ${type} — Imagen Latente`);
     const body = encodeURIComponent(
-      `Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}\n`
+      `Nombre/Medio: ${name}\n` +
+      `Email: ${email}\n` +
+      `WhatsApp: ${whatsapp}\n` +
+      `Tipo de Solicitud: ${type}\n` +
+      `Prioridad: ${priority}\n\n` +
+      `Detalle del Evento / ID de Foto:\n${message}\n`
     );
 
-    // En Fase 1: mailto simple (cambia el correo destino si Ariel te lo da)
-    const to = "ariel@example.com"; // TODO: reemplazar por correo real si lo entrega
+    // En Fase 1: mailto simple
+    const to = "ariel@example.com";
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
+    // Feedback visual simple
+    alert("Se ha abierto tu cliente de correo con la solicitud. ¡Gracias!");
     return false;
   }
 

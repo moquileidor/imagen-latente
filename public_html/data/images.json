@@ -1,29 +1,47 @@
 [
   {
-    "id": "evento-001",
-    "title": "Evento — Cobertura nocturna",
+    "id": "test-001",
+    "title": "Evento - Cobertura Nocturna",
     "category": "eventos",
-    "date": "2026-01-10",
-    "url": "assets/img/gallery/full/foto-01.jpg",
-    "thumb": "assets/img/gallery/thumbs/foto-01.jpg",
-    "alt": "Cobertura fotográfica de evento nocturno con iluminación profesional"
+    "date": "2026-01-12",
+    "url": "assets/img/gallery/full/test-evento-01.jpg",
+    "thumb": "assets/img/gallery/full/test-evento-01.jpg",
+    "alt": "Boda cobertura nocturna"
   },
   {
-    "id": "retrato-001",
-    "title": "Retrato — Luz natural",
+    "id": "test-002",
+    "title": "Retrato - Luz Natural",
     "category": "retratos",
-    "date": "2026-01-08",
-    "url": "assets/img/gallery/full/foto-02.jpg",
-    "thumb": "assets/img/gallery/thumbs/foto-02.jpg",
-    "alt": "Retrato con luz natural en exteriores"
+    "date": "2026-01-12",
+    "url": "assets/img/gallery/full/test-retrato-01.jpg",
+    "thumb": "assets/img/gallery/full/test-retrato-01.jpg",
+    "alt": "Retrato masculino luz natural"
   },
   {
-    "id": "arte-001",
-    "title": "Arte — Composición editorial",
+    "id": "test-003",
+    "title": "Arte - Composición Editorial",
     "category": "arte",
-    "date": "2026-01-05",
-    "url": "assets/img/gallery/full/foto-03.jpg",
-    "thumb": "assets/img/gallery/thumbs/foto-03.jpg",
-    "alt": "Composición artística con enfoque editorial"
+    "date": "2026-01-12",
+    "url": "assets/img/gallery/full/test-arte-01.jpg",
+    "thumb": "assets/img/gallery/full/test-arte-01.jpg",
+    "alt": "Fotografía artística editorial"
+  },
+  {
+    "id": "test-004",
+    "title": "Evento - Celebración",
+    "category": "eventos",
+    "date": "2026-01-12",
+    "url": "assets/img/gallery/full/test-evento-02.jpg",
+    "thumb": "assets/img/gallery/full/test-evento-02.jpg",
+    "alt": "Celebración de evento corporativo"
+  },
+  {
+    "id": "test-005",
+    "title": "Retrato - Estudio",
+    "category": "retratos",
+    "date": "2026-01-12",
+    "url": "assets/img/gallery/full/test-retrato-02.jpg",
+    "thumb": "assets/img/gallery/full/test-retrato-02.jpg",
+    "alt": "Retrato femenino en estudio"
   }
 ]

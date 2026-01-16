@@ -1,0 +1,21 @@
+# --- Imagen Latente - Git Ignore ---
+
+# Seguridad
+public_html/admin/sync-gallery.php
+
+# Archivos Generados (Se crean automáticamente con el Script de Sincronización)
+public_html/assets/img/gallery/thumbs/
+public_html/data/images.json
+
+public_html/assets/img/gallery/full/*
+
+# Logs y Cache
+error_log
+.htaccess.bak
+.php_error.log
+
+# Archivos de Sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
